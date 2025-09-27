@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Asistente Virtual Escolar</title>
+</head>
+<body>
+  <h2>Bienvenido al Asistente Virtual Escolar</h2>
+  <p>Puedes hacer preguntas en el chat de la esquina inferior derecha 👇</p>
+
+  <!-- Aquí pegas tu snippet -->
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "4bdce733-31d0-45e8-9ad7-65a1059e2443", 
+      region: "aws-us-east-1",
+      serviceInstanceID: "20250918-2204-5294-90b7-d501de152ac9",
+      orchestrateUIAgentExtensions: false,
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+</html>
